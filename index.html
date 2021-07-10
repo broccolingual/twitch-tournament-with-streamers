@@ -21,6 +21,13 @@
             <input type="submit" id="submit" value="Submit">
           </form>
         </li>
+        <li>
+          <iframe id="twitch-chat-embed" name="chat"
+            src="https://www.twitch.tv/embed/stylishnoob4/chat?parent=naughty-mccarthy-e6ef3c.netlify.app"
+            height="100%"
+            width="100%">
+          </iframe>
+        </li>
       </ul>
     </nav>
   </section>
@@ -42,7 +49,7 @@
       const st_sub = document.getElementById("sub-stream")
       const st_main_title = document.getElementById("st-main-title")
       const st_sub_title = document.getElementById("st-sub-title")
-      
+
       console.log(st_main.value, st_sub.value)
       var option_main = {
         width: "100%",
@@ -62,6 +69,8 @@
 
       var player_main = new Twitch.Player("st-window-main", option_main);
       var player_sub = new Twitch.Player("st-window-sub", option_sub);
+
+      document.chat.location.src = `https://www.twitch.tv/embed/${st_sub.value}/chat?parent=naughty-mccarthy-e6ef3c.netlify.app`
     }
   </script>
 </body>

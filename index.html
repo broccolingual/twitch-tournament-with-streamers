@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Tournament Streamer Reaction App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+</head>
+<body>
+  <section id="navbar">
+    <nav>
+      <ul>
+        <li>
+          <form action="#">
+            <p>Main Stream</p>
+            <input type="text" name="main-stream" id="main-stream">
+            <p>Sub Stream</p>
+            <input type="text" name="sub-stream" id="sub-stream">
+            <input type="submit" onclick="reload()" value="submit" id="submit">
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <div class="container">
+    <section id="st-main">
+      <div id="st-window-main"></div>
+    </section>
+    <section id="st-sub">
+      <div id="st-window-sub"></div>
+    </section>
+  </div>
+  <script>
+    const reload = () => {
+      const st_main = document.getElementById("main-stream")
+      const st_sub = document.getElementById("sub-stream")
+      console.log(st_main.value, st_sub.value)
+      var option_main = {
+        width: "100%",
+        height: "100%",
+        channel: st_main.value,
+        parent: ["embed.example.com", "othersite.example.com"]
+      };
+      var option_sub = {
+        width: "320px",
+        height: "180px",
+        channel: st_sub.value,
+        parent: ["embed.example.com", "othersite.example.com"]
+      };
+      var player_main = new Twitch.Player("st-window-main", option_main);
+      var player_sub = new Twitch.Player("st-window-sub", option_sub);
+    }
+  </script>
+</body>
+</html>

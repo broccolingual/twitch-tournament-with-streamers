@@ -13,12 +13,12 @@
     <nav>
       <ul>
         <li>
-          <form action="#">
+          <form onsubmit="reload(); return false">
             <p>Main Stream</p>
             <input type="text" name="main-stream" id="main-stream">
             <p>Sub Stream</p>
             <input type="text" name="sub-stream" id="sub-stream">
-            <input type="submit" onclick="reload()" value="submit" id="submit">
+            <input type="submit" id="submit" value="Submit">
           </form>
         </li>
       </ul>
@@ -26,16 +26,23 @@
   </section>
   <div class="container">
     <section id="st-main">
-      <div id="st-window-main"></div>
+      <div id="st-window-main">
+        <div id="st-main-title"></div>
+      </div>
     </section>
     <section id="st-sub">
-      <div id="st-window-sub"></div>
+      <div id="st-window-sub">
+        <div id="st-sub-title"></div>
+      </div>
     </section>
   </div>
   <script>
     const reload = () => {
       const st_main = document.getElementById("main-stream")
       const st_sub = document.getElementById("sub-stream")
+      const st_main_title = document.getElementById("st-main-title")
+      const st_sub_title = document.getElementById("st-sub-title")
+      
       console.log(st_main.value, st_sub.value)
       var option_main = {
         width: "100%",
@@ -49,6 +56,10 @@
         channel: st_sub.value,
         parent: ["naughty-mccarthy-e6ef3c.netlify.app"]
       };
+
+      st_main_title.innerHTML = st_main.value
+      st_sub_title.innerHTML = st_sub.value
+
       var player_main = new Twitch.Player("st-window-main", option_main);
       var player_sub = new Twitch.Player("st-window-sub", option_sub);
     }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Twitch Tournament Streamer Reaction App</title>
+  <title>Watching Twitch Stream with Twitch Streamer</title>
   <link rel="stylesheet" href="style.css">
   <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 </head>
@@ -41,13 +41,13 @@
         width: "100%",
         height: "100%",
         channel: st_main.value,
-        parent: ["embed.example.com", "othersite.example.com"]
+        parent: ["naughty-mccarthy-e6ef3c.netlify.app"]
       };
       var option_sub = {
         width: "320px",
         height: "180px",
         channel: st_sub.value,
-        parent: ["embed.example.com", "othersite.example.com"]
+        parent: ["naughty-mccarthy-e6ef3c.netlify.app"]
       };
       var player_main = new Twitch.Player("st-window-main", option_main);
       var player_sub = new Twitch.Player("st-window-sub", option_sub);

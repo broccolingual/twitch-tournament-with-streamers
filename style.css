@@ -23,9 +23,25 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+#navbar.hide {
+  width: 60px;
+}
+
 #navbar nav {
   width: 100%;
   height: 100%;
+}
+
+#navbar nav ul li:first-child {
+  margin-top: 0;
+}
+
+#navbar.hide nav ul li:first-child {
+  display: initial;
+}
+
+#navbar.hide nav ul li {
+  display: none;
 }
 
 #navbar nav ul {
@@ -37,8 +53,19 @@ body {
 
 #navbar nav ul li {
   width: 100%;
-  height: 100%;
   margin-top: 1em;
+}
+
+#navbar nav ul li .toggle {
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+  border-bottom: solid 1px white;
+  width: 100%;
+  text-align: left;
+  padding-left: 5px;
 }
 
 #navbar nav ul li p {

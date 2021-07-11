@@ -13,6 +13,9 @@
     <nav>
       <ul>
         <li>
+          <button onclick="menu_toggle()" class="toggle"><</button>
+        </li>
+        <li>
           <form onsubmit="reload(); return false">
             <p>Main Stream</p>
             <input type="text" name="main-stream" id="main-stream">
@@ -44,6 +47,10 @@
     </section>
   </div>
   <script>
+    const menu_toggle = () => {
+      const nav = document.getElementById("navbar")
+      nav.classList.toggle("hide")
+    }
     const reload = () => {
       const st_main = document.getElementById("main-stream")
       const st_sub = document.getElementById("sub-stream")

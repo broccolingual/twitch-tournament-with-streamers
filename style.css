@@ -70,9 +70,16 @@ body {
 }
 
 #navbar nav ul li p {
-  margin-top: 1.2em;
+  margin-top: 0.5em;
   color: white;
   border-bottom: solid 2px var(--theme-color);
+}
+
+#navbar nav ul li h4 {
+  margin-top: 1.2em;
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 1px;
 }
 
 #navbar nav ul li input {
@@ -102,6 +109,7 @@ body {
 }
 
 .container {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -126,10 +134,10 @@ body {
 #st-sub {
   position: absolute;
   top: 40%;
-  right: 0;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   padding: 4px;
+  transition: all 300ms 0s ease;
 }
 
 #st-window-sub {

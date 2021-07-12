@@ -16,12 +16,25 @@
           <button onclick="menu_toggle()" class="toggle"><</button>
         </li>
         <li>
+          <h4>Stream Settings</h4>
           <form onsubmit="reload(); return false">
             <p>Main Stream</p>
             <input type="text" name="main-stream" id="main-stream">
             <p>Sub Stream</p>
             <input type="text" name="sub-stream" id="sub-stream">
             <input type="submit" id="submit" value="Submit">
+          </form>
+        </li>
+        <li>
+          <h4>Position Settings</h4>
+          <form method="post">
+            <p>Horizontal</p>
+            <select name="h-place" id="h-place">
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+            </select>
+            <p>Vertical(from Top)</p>
+            <input type="text" name="v-ratio" id="v-ratio" value="40%">
           </form>
         </li>
         <!-- <li>
@@ -79,6 +92,26 @@
 
       // document.chat.location.src = `https://www.twitch.tv/embed/${st_sub.value}/chat?parent=naughty-mccarthy-e6ef3c.netlify.app`
     }
+
+    var st_sub = document.getElementById("st-sub")
+    var v_ratio = document.getElementById("v-ratio")
+    v_ratio.addEventListener("change", function(){
+      st_sub.style.top = v_ratio.value
+    })
+    v_ratio.addEventListener("input", function(){
+      st_sub.style.top = v_ratio.value
+    })
+
+    var h_place = document.getElementById("h-place")
+    h_place.addEventListener("change", function(){
+      if (h_place.value === "left") {
+        st_sub.style.left = "0%"
+        st_sub.style.transform = "translate(0%, -50%)"
+      }else if (h_place.value === "right") {
+        st_sub.style.left = "100%"
+        st_sub.style.transform = "translate(-100%, -50%)"
+      }
+    })
   </script>
 </body>
 </html>

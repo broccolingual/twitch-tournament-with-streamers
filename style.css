@@ -152,3 +152,35 @@ body {
   left: 0.5em;
   color: rgba(255, 255, 255, 0.9);
 }
+
+#pv-container {
+  margin-top: 0.5em;
+  width: 100%;
+  height: 120px;
+  color: white;
+}
+
+#pv-container h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 1px;
+}
+
+#pv-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme-color);
+}
+
+#pv-sub {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 300ms 0s ease;
+}

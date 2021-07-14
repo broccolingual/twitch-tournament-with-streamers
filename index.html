@@ -35,6 +35,15 @@
             </select>
             <p>Vertical(from Top)</p>
             <input type="text" name="v-ratio" id="v-ratio" value="40%">
+            <p>Preview</p>
+            <div id="pv-container">
+              <div id="pv-main">
+                <h5>Main</h5>
+                <div id="pv-sub">
+                  <h5>Sub</h5>
+                </div>
+              </div>
+            </div>
           </form>
         </li>
         <!-- <li>
@@ -94,12 +103,15 @@
     }
 
     var st_sub = document.getElementById("st-sub")
+    var pv_sub = document.getElementById("pv-sub")
     var v_ratio = document.getElementById("v-ratio")
     v_ratio.addEventListener("change", function(){
       st_sub.style.top = v_ratio.value
+      pv_sub.style.top = v_ratio.value
     })
     v_ratio.addEventListener("input", function(){
       st_sub.style.top = v_ratio.value
+      pv_sub.style.top = v_ratio.value
     })
 
     var h_place = document.getElementById("h-place")
@@ -107,9 +119,15 @@
       if (h_place.value === "left") {
         st_sub.style.left = "0%"
         st_sub.style.transform = "translate(0%, -50%)"
+
+        pv_sub.style.left = "0%"
+        pv_sub.style.transform = "translate(0%, -50%)"
       }else if (h_place.value === "right") {
         st_sub.style.left = "100%"
         st_sub.style.transform = "translate(-100%, -50%)"
+
+        pv_sub.style.left = "100%"
+        pv_sub.style.transform = "translate(-100%, -50%)"
       }
     })
   </script>

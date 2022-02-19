@@ -50,6 +50,7 @@
           </form>
         </li>
         <li>
+          <h4>Chat</h4>
           <iframe id="twitch-chat-embed" name="chat"
             src=""
             scrolling="no"
@@ -103,7 +104,7 @@
       var player_main = new Twitch.Player("st-window-main", option_main);
       var player_sub = new Twitch.Player("st-window-sub", option_sub);
 
-      document.chat.location.src = `https://www.twitch.tv/embed/${st_sub.value}/chat?parent=naughty-mccarthy-e6ef3c.netlify.app`
+      document.chat.location.src = `https://www.twitch.tv/embed/${st_sub.value}/chat?parent=naughty-mccarthy-e6ef3c.netlify.app&parent=www.naughty-mccarthy-e6ef3c.netlify.app`
     }
 
     var st_sub = document.getElementById("st-sub")

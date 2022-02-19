@@ -7,13 +7,16 @@
   <title>Watching Twitch Stream with Twitch Streamer</title>
   <link rel="stylesheet" href="style.css">
   <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+  <script src="https://kit.fontawesome.com/ce978adcad.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <section id="navbar">
     <nav>
       <ul>
         <li>
-          <button onclick="menu_toggle()" class="toggle"><</button>
+          <button onclick="menu_toggle()" class="toggle">
+            <i class="fas fa-bars"></i>
+          </button>
         </li>
         <li>
           <h4>Stream Settings</h4>
@@ -46,13 +49,14 @@
             </div>
           </form>
         </li>
-        <!-- <li>
+        <li>
           <iframe id="twitch-chat-embed" name="chat"
-            src="https://www.twitch.tv/embed/stylishnoob4/chat?parent=naughty-mccarthy-e6ef3c.netlify.app"
+            src=""
+            scrolling="no"
             height="100%"
             width="100%">
           </iframe>
-        </li> -->
+        </li>
       </ul>
     </nav>
   </section>
@@ -99,7 +103,7 @@
       var player_main = new Twitch.Player("st-window-main", option_main);
       var player_sub = new Twitch.Player("st-window-sub", option_sub);
 
-      // document.chat.location.src = `https://www.twitch.tv/embed/${st_sub.value}/chat?parent=naughty-mccarthy-e6ef3c.netlify.app`
+      document.chat.location.src = `https://www.twitch.tv/embed/${st_sub.value}/chat?parent=naughty-mccarthy-e6ef3c.netlify.app`
     }
 
     var st_sub = document.getElementById("st-sub")

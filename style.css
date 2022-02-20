@@ -78,6 +78,10 @@ body {
   border-bottom: solid 2px var(--theme-color);
 }
 
+#navbar nav ul li:last-child p {
+  border: none;
+}
+
 #navbar nav ul li h4 {
   margin-top: 1.2em;
   color: white;
